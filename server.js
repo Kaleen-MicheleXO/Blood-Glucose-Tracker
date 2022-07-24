@@ -4,7 +4,7 @@ const MongoClient = require("mongodb").MongoClient;
 const PORT = 2100;
 require("dotenv").config();
 const cors = require("cors");
-
+//Database connection
 let db,
   dbConnectionStr = process.env.DB_STRING,
   dbName = "Favorite_Music";
@@ -19,6 +19,7 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true }).then(
 
 app.set("view engine", "ejs");
 app.set("port", PORT);
+//connects to Public folder containing css and js files
 app.use(express.static("Public")),
   app.use(express.urlencoded({ extended: true })),
   app.use(express.json());
@@ -75,6 +76,7 @@ app.put("/addOneLike", (request, response) => {
     })
     .catch((error) => console.error(error));
 });
+//subtracts 1 like
 app.put("/decreaseLike", (request, response) => {
   // console.log(request);
   db.collection("Music")
