@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/8f020836b6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link href="css/style.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Favorite 90's-2000's Music</h1>
+
+    <div>
+      <h2 class="sectS">Song</h2>
+      <h2 class="sectA">Artist</h2>
+      <h2 class="sectL">Likes/Dislikes</h2>
+      <!-- <h2 class="sectT">Trash</h2> -->
+    </div>
+
+    <ul class="Song">
+      <% for(let i=0;i < info.length;i++){%>
+      <li class="Songs">
+        <span class="SongName"><%=info[i].Song %></span>
+        <span class="Artist"><%= info[i].Artist %></span>
+        <span class="Like"><%= info[i].likes %></span>
+        <span class="fa fa-thumbs-up"></span>
+        <span class="fa-solid fa-thumbs-down"></span>
+        <!-- <span class="fa fa-trash"></span> -->
+      </li>
+      <%}%>
+    </ul>
+    <section>
+      <h2>Add A Song</h2>
+      <form action="/addMusic" method="POST">
+        <input type="text" placeholder="Song" name="Song" />
+        <input type="text" placeholder="Artist" name="Artist" />
+        <input type="submit" />
+      </form>
+    </section>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

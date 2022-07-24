@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+  padding: 0%;
+  margin: 0%;
+}
+h1 {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  color: palegreen;
+}
+div {
+  display: flex;
+  border-bottom: 1px solid black;
+}
+h2 {
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-self: flex-start;
+  justify-self: start;
+  border: 1px, solid black;
+}
+.sectS {
+  margin-left: 3%;
+  margin-right: 35%;
+}
+.sectA {
+  margin-right: 25%;
+}
+.sectL {
+  margin-left: 15%;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: left;
+  border-bottom: 1px solid black;
+  list-style: square;
+}
+
+span {
+  width: 50px;
+  margin-top: 1%;
+}
+.SongName {
+  margin-left: 3%;
+}
+.Artist {
+  margin-left: 33%;
+}
+
+.Like {
+  margin-left: 39%;
+  width: 2%;
+}
+.fa-thumbs-up {
+  margin-right: 21%;
+  width: 2%;
+}
+.fa-thumbs-down {
+  margin-left: -22%;
+  margin-right: 5%;
+  width: 2%;
+}
+section {
+  margin-top: 2%;
+}
+
+@media screen and (max-width: 580px) {
+  h1 {
+    font-size: 25px;
+  }
+  .sectL {
+    font-size: 15px;
+    margin-left: 15%;
+  }
+  .sectA {
+    font-size: 15px;
+    margin-right: 11%;
+  }
+  .sectS {
+    font-size: 15px;
+    margin-right: 19%;
+  }
+
+  .fa-thumbs-up {
+    margin-right: 37%;
+  }
+  .fa-thumbs-down {
+    margin-left: -34%;
+    margin-right: 20%;
+  }
+  .SongName {
+    margin-left: 11%;
+  }
+  .Artist {
+    margin-left: 19%;
+  }
+
+  .Like {
+    margin-left: 31%;
+  }
+  .fa-thumbs-up {
+    margin-right: 37%;
+  }
+  .fa-thumbs-down {
+    margin-left: -34%;
+    margin-right: 30%;
+  }
+}
+@media only screen and (min-width: 680px) and (max-width: 1024pc) {
+  .sectA {
+    margin-right: 15%;
+  }
+  .sectS {
+    margin-right: 30%;
+  }
+  .SongName {
+    margin-left: 2%;
+  }
+  .Artist {
+    margin-left: 29%;
+  }
+
+  .Like {
+    margin-left: 32%;
+  }
+  .fa-thumbs-up {
+    margin-right: 31%;
+  }
+  .fa-thumbs-down {
+    margin-left: -33%;
+    margin-right: 16%;
+  }
+}
