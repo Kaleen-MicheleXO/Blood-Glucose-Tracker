@@ -19,7 +19,7 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true }).then(
 
 app.set("view engine", "ejs");
 app.set("port", PORT);
-app.use(express.static("public")),
+app.use(express.static("Public")),
   app.use(express.urlencoded({ extended: true })),
   app.use(express.json());
 
