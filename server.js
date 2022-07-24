@@ -112,6 +112,6 @@ app.put("/decreaseLike", (request, response) => {
 //     .catch((error) => console.error(error));
 // });
 //const uri = process.env.MONGODB_URI;
-app.listen(process.env.MONGODB_URL || PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
   console.log(`server running on port ${PORT}`);
 });
