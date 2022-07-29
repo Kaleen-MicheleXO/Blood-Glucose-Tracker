@@ -20,14 +20,14 @@ h2 {
   justify-self: start;
   border: 1px, solid black;
 }
-.sectS {
+.sectD {
   margin-left: 3%;
-  margin-right: 35%;
+  margin-right: 30%;
 }
-.sectA {
+.secT {
   margin-right: 25%;
 }
-.sectL {
+.sectB {
   margin-left: 15%;
 }
 
@@ -42,97 +42,98 @@ li {
 }
 
 span {
-  width: 50px;
+  width: 80px;
   margin-top: 1%;
 }
-.SongName {
-  margin-left: 3%;
+.Date {
+  margin-left: -11%;
 }
-.Artist {
-  margin-left: 33%;
+.Time {
+  margin-left: 13%;
 }
 
-.Like {
-  margin-left: 39%;
+.Blood-Sugar {
+  /* margin-left: 39%; */
   width: 2%;
 }
-.fa-thumbs-up {
+/* .fa-thumbs-up {
   margin-right: 21%;
   width: 2%;
 }
 .fa-thumbs-down {
   margin-left: -22%;
   margin-right: 5%;
-  width: 2%;
-}
+  width: 2%; */
+/* } */
 section {
   margin-top: 2%;
 }
-
+/* 
 @media screen and (max-width: 580px) {
   h1 {
     font-size: 25px;
   }
-  .sectL {
+  .sectB {
     font-size: 15px;
     margin-left: 15%;
   }
-  .sectA {
+  .sectT {
     font-size: 15px;
     margin-right: 11%;
   }
-  .sectS {
+  .sectD {
     font-size: 15px;
     margin-right: 19%;
-  }
+  } */
 
-  .fa-thumbs-up {
+  /* .fa-thumbs-up {
     margin-right: 37%;
   }
   .fa-thumbs-down {
     margin-left: -34%;
-    margin-right: 20%;
-  }
-  .SongName {
-    margin-left: 11%;
-  }
-  .Artist {
-    margin-left: 19%;
-  }
-
-  .Like {
-    margin-left: 31%;
-  }
-  .fa-thumbs-up {
-    margin-right: 37%;
-  }
-  .fa-thumbs-down {
-    margin-left: -34%;
-    margin-right: 30%;
-  }
+    margin-right: 20%; */
+/* }
+.Date {
+  margin-left: 11%;
 }
-@media only screen and (min-width: 680px) and (max-width: 1024pc) {
+.Time {
+  margin-left: 19%;
+}
+
+.Blood-Sugar {
+  margin-left: 31%;
+} */
+/* .fa-thumbs-up {
+    margin-right: 37%;
+  }
+  .fa-thumbs-down {
+    margin-left: -34%;
+    margin-right: 30%; */
+/* } */
+/* } */
+/* @media only screen and (min-width: 680px) and (max-width: 1024px) {
   .sectA {
     margin-right: 15%;
   }
   .sectS {
     margin-right: 30%;
   }
-  .SongName {
+  /* .Date {
     margin-left: 2%;
   }
-  .Artist {
-    margin-left: 29%;
+  .Time {
+    margin-left: 24%;
   }
 
-  .Like {
+  .Blood-Sugar {
     margin-left: 32%;
-  }
+  } 
+
   .fa-thumbs-up {
     margin-right: 31%;
   }
   .fa-thumbs-down {
     margin-left: -33%;
-    margin-right: 16%;
-  }
-}
+    margin-right: 16%; */
+  /* } */
+

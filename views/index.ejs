@@ -12,32 +12,33 @@
     <title>Favorite Music</title>
   </head>
   <body>
-    <h1>Favorite 90's-2000's Music</h1>
+    <h1>Blood Suger Tracker</h1>
 
     <div>
-      <h2 class="sectS">Song</h2>
-      <h2 class="sectA">Artist</h2>
-      <h2 class="sectL">Likes/Dislikes</h2>
+      <h2 class="sectD">Date</h2>
+      <h2 class="sectT">Time</h2>
+      <h2 class="sectB">Blood Glucose</h2>
       <!-- <h2 class="sectT">Trash</h2> -->
     </div>
 
-    <ul class="Song">
+    <ul class="Blood-Sugar-Log">
       <% for(let i=0;i < info.length;i++){%>
-      <li class="Songs">
-        <span class="SongName"><%=info[i].Song %></span>
-        <span class="Artist"><%= info[i].Artist %></span>
-        <span class="Like"><%= info[i].likes %></span>
-        <span class="fa fa-thumbs-up"></span>
-        <span class="fa-solid fa-thumbs-down"></span>
-        <!-- <span class="fa fa-trash"></span> -->
+      <li class="Blood-Sugar-Data">
+        <span class="Date"><%=info[i].BGDate %></span>
+        <span class="Time"><%= info[i].BGTime %></span>
+        <span class="Blood-Sugar"><%= info[i].BGSugar %></span>
+        <!-- <span class="fa fa-thumbs-up"></span> -->
+        <!-- <span class="fa-solid fa-thumbs-down"></span> -->
+        <span class="fa fa-trash"></span>
       </li>
       <%}%>
     </ul>
     <section>
-      <h2>Add A Song</h2>
-      <form action="/addMusic" method="POST">
-        <input type="text" placeholder="Song" name="Song" />
-        <input type="text" placeholder="Artist" name="Artist" />
+      <h2>Add Your Blood Sugar</h2>
+      <form action="/addBG" method="POST">
+        <input type="date" placeholder="dd-mm-yyyy" name="BGDate" />
+        <input type="time" placeholder="Time" name="BGTime" />
+        <input type="text" placeholder="Blood-Sugar" name="BGSugar" />
         <input type="submit" />
       </form>
     </section>

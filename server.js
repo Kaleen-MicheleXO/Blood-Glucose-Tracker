@@ -7,7 +7,7 @@ const cors = require("cors");
 //Database connection
 let db,
   dbConnectionStr = process.env.DB_STRING,
-  dbName = "Favorite_Music";
+  dbName = "Blood-Suger";
 
 //Mongodb connection
 MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true }).then(
@@ -25,7 +25,7 @@ app.use(express.static("Public")),
   app.use(express.json());
 
 app.get("/", (request, response) => {
-  db.collection("Music")
+  db.collection("Current-BG")
     .find()
     .sort({ likes: -1 })
     .toArray()
@@ -36,12 +36,13 @@ app.get("/", (request, response) => {
 });
 
 //adds a song to the site
-app.post("/addMusic", (request, response) => {
-  console.log(request);
-  db.collection("Music")
+app.post("/addBG", (request, response) => {
+  // console.log(request);
+  db.collection("Current-BG")
     .insertOne({
-      Song: request.body.Song,
-      Artist: request.body.Artist,
+      BGDate: request.body.BGDate,
+      BGTime: request.body.BGTime,
+      BGSugar: request.body.BGSugar,
       likes: 0,
     })
     .then((result) => {
@@ -51,69 +52,74 @@ app.post("/addMusic", (request, response) => {
     .catch((error) => console.error(error));
 });
 ///updated likes
-app.put("/addOneLike", (request, response) => {
-  // console.log(request);
-  db.collection("Music")
-    .updateOne(
-      {
-        Song: request.body.Song,
-        Artist: request.body.Artist,
-        likes: request.body.likesS,
-      },
-      {
-        $set: {
-          likes: request.body.likesS + 1,
-        },
-      },
-      {
-        sort: { _id: -1 },
-        upsert: true,
-      }
-    )
-    .then((result) => {
-      console.log("Added One Like");
-      response.json("Like Added");
-    })
-    .catch((error) => console.error(error));
-});
+// app.put("/addOneBG", (request, response) => {
+// console.log(request);
+//   db.collection("Current-BG")
+//     .updateOne(
+//       {
+//         Song: request.body.Song,
+//         Artist: request.body.Artist,
+//         likes: request.body.likesS,
+//       },
+//       {
+//         $set: {
+//           likes: request.body.likesS + 1,
+//         },
+//       },
+//       {
+//         sort: { _id: -1 },
+//         upsert: true,
+//       }
+//     )
+//     .then((result) => {
+//       console.log("Added One Like");
+//       response.json("Like Added");
+//     })
+//     .catch((error) => console.error(error));
+// });
 //subtracts 1 like
-app.put("/decreaseLike", (request, response) => {
-  // console.log(request);
-  db.collection("Music")
-    .updateOne(
-      {
-        Song: request.body.Song,
-        Artist: request.body.Artist,
-        likes: request.body.likesS,
-      },
-      {
-        $set: {
-          likes: request.body.likesS - 1,
-        },
-      },
-      {
-        sort: { _id: -1 },
-        // upsert: true,
-      }
-    )
+// app.put("/decreaseLike", (request, response) => {
+//   // console.log(request);
+//   db.collection("Current-BG")
+//     .updateOne(
+//       {
+//         Song: request.body.Song,
+//         Artist: request.body.Artist,
+//         likes: request.body.likesS,
+//       },
+//       {
+//         $set: {
+//           likes: request.body.likesS - 1,
+//         },
+//       },
+//       {
+//         sort: { _id: -1 },
+//         // upsert: true,
+//       }
+//     )
+//     .then((result) => {
+//       console.log("Added One Like");
+//       response.json("Like Added");
+//     })
+//     .catch((error) => console.error(error));
+// });
+
+//deletes song from db
+app.delete("/deleteBG", (request, response) => {
+  console.log(request);
+  db.collection("Current-BG")
+    .deleteOne({ BGDate: request.body.BGDate})
     .then((result) => {
-      console.log("Added One Like");
-      response.json("Like Added");
+      console.log("Sucessfully deleted one");
+      response.json("Song Deleted");
     })
     .catch((error) => console.error(error));
 });
 
-//deletes song from db
-// app.delete("/deleteSong", (request, response) => {
-//   db.collection("Music")
-//     .deleteOne({ Song: request.body.Song })
-//     .then((result) => {
-//       console.log("Sucessfully deleted one");
-//       response.json("Song Deleted");
-//     })
-//     .catch((error) => console.error(error));
-// });
-//const uri = process.env.MONGODB_URI;
 app.listen(process.env.PORT || PORT, () => {
   console.log(`server running on port ${PORT}`);
 });
+
+// BGDate: request.body.BGDate,
+// BGTime: request.body.BGTime,
+// BGSugar: request.body.BGSugar,
