@@ -35,80 +35,32 @@ app.get("/", (request, response) => {
     .catch((error) => console.error(error));
 });
 
-//adds a song to the site
+//adds a BG to the site
 app.post("/addBG", (request, response) => {
   // console.log(request);
   db.collection("Current-BG")
     .insertOne({
-      BGDate: request.body.BGDate,
+      BGDate: new Date().toString().slice(0,16),
       BGTime: request.body.BGTime,
       BGSugar: request.body.BGSugar,
       likes: 0,
     })
     .then((result) => {
-      console.log("New Song Added");
+      console.log("New BG Added");
       response.redirect("/");
     })
     .catch((error) => console.error(error));
+    
 });
-///updated likes
-// app.put("/addOneBG", (request, response) => {
-// console.log(request);
-//   db.collection("Current-BG")
-//     .updateOne(
-//       {
-//         Song: request.body.Song,
-//         Artist: request.body.Artist,
-//         likes: request.body.likesS,
-//       },
-//       {
-//         $set: {
-//           likes: request.body.likesS + 1,
-//         },
-//       },
-//       {
-//         sort: { _id: -1 },
-//         upsert: true,
-//       }
-//     )
-//     .then((result) => {
-//       console.log("Added One Like");
-//       response.json("Like Added");
-//     })
-//     .catch((error) => console.error(error));
-// });
-//subtracts 1 like
-// app.put("/decreaseLike", (request, response) => {
-//   // console.log(request);
-//   db.collection("Current-BG")
-//     .updateOne(
-//       {
-//         Song: request.body.Song,
-//         Artist: request.body.Artist,
-//         likes: request.body.likesS,
-//       },
-//       {
-//         $set: {
-//           likes: request.body.likesS - 1,
-//         },
-//       },
-//       {
-//         sort: { _id: -1 },
-//         // upsert: true,
-//       }
-//     )
-//     .then((result) => {
-//       console.log("Added One Like");
-//       response.json("Like Added");
-//     })
-//     .catch((error) => console.error(error));
-// });
 
-//deletes song from db
+
+
+
+//deletes  from db
 app.delete("/deleteBG", (request, response) => {
   console.log(request);
   db.collection("Current-BG")
-    .deleteOne({ BGDate: request.body.BGDate})
+    .deleteOne({ BGDate: new Date().toString().slice(0,16)})
     .then((result) => {
       console.log("Sucessfully deleted one");
       response.json("Song Deleted");
@@ -121,5 +73,3 @@ app.listen(process.env.PORT || PORT, () => {
 });
 
 // BGDate: request.body.BGDate,
-// BGTime: request.body.BGTime,
-// BGSugar: request.body.BGSugar,

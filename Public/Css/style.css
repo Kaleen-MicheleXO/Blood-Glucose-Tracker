@@ -3,6 +3,9 @@
   padding: 0%;
   margin: 0%;
 }
+.hidden{
+  visibility: hidden;
+}
 h1 {
   display: flex;
   justify-content: center;
