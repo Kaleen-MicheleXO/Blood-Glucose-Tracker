@@ -1,22 +1,26 @@
 
 // const ThumbsUp = document.querySelectorAll(".fa-thumbs-up");
 const DeleteText = document.querySelectorAll(".fa-trash");
- document.querySelector('.submit').addEventListener("click",BGcheck)
-// looping throught array with forEach to add a event listener with a call back
+//document.querySelector('.submit').addEventListener("click",BGcheck)
+
 
 Array.from(DeleteText).forEach((e) => {
   e.addEventListener("click", deleteBG);
 });
 
 
-function BGcheck (){
-  const BG = Number(this.parentNode.childNodes[7].innerText);
-  console.log(this.parentNode.childNodes)
+
+window.onload=(BGcheck)=>{
+  const BG = Number(this.parentNode.childNodes[5].innerText);
+ //console.log(this.parentNode.childNodes)
   if (BG<=140){
     document.querySelector('.fa-thumbs-up').classList.remove('hidden')
   }else{document.querySelector('.fa-thumbs-up').classList.add('hidden')}
 
-}
+};
+
+
+
 
 async function deleteBG() {
   const BGD = this.parentNode.childNodes[1].innerText;
