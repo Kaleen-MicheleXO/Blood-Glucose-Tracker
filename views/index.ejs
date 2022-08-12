@@ -9,36 +9,44 @@
       crossorigin="anonymous"
     ></script>
     <link href="Css/style.css" rel="stylesheet" />
-    <title>Favorite Music</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400&display=swap" rel="stylesheet">
+    <title>Blood Glucose Tracker</title>
   </head>
   <body>
-    <h1>Blood Suger Tracker</h1>
-
+    <h1>Blood Sugar Tracker</h1>
+<section class="mainS">
+  <main>
     <div>
       <h2 class="sectD">Date</h2>
-      <h2 class="sectT">Time</h2>
-      <h2 class="sectB">Blood Glucose</h2>
-      <!-- <h2 class="sectT">Trash</h2> -->
+      <!-- <h2>Time</h2> -->
+      <h2 class="sectB">Glucose</h2>
+      <h2></h2>
+       <h2 class="sectDE">Delete</h2>
     </div>
 
     <ul class="Blood-Sugar-Log">
       <% for(let i=0;i < info.length;i++){%>
       <li class="Blood-Sugar-Data">
         <span class="Date"><%=info[i].BGDate %></span>
-        <span class="Time"><%= info[i].BGTime %></span>
-        <span class="Blood-Sugar"><%= info[i].BGSugar %></span>
-        <span class="fa fa-thumbs-up hidden"></span>
-        <!-- <span class="fa-solid fa-thumbs-down"></span> -->
+        <!-- <span class="Time"><%= info[i].BGTime %></span> -->
+        <span class='fa-solid fa-droplet fa-sm Blood-Sugar'><span class="Blood-Sugarr "><%= info[i].BGSugar %></span></span>
+        <span class="fa-solid fa-face-smile hidden"></span>
+        <span class="fa-solid fa-face-meh hidden"></span>
+        <span class="fa-solid fa-face-frown hidden"></span> 
         <span class="fa fa-trash"></span>
       </li>
       <%}%>
     </ul>
-    <section>
-      <h2>Add Your Blood Sugar</h2>
-      <form action="/addBG" method="POST">
+  </main>
+  </section>
+    <section >
+      <h2 class="data-Title">Add Your Blood Sugar</h2>
+      <form class="data-Added" action="/addBG" method="POST">
         <!-- <input type="date" placeholder="dd-mm-yyyy" name="BGDate" /> -->
-        <input type="time" placeholder="Time" name="BGTime" />
-        <input type="text" placeholder="Blood-Sugar" name="BGSugar" />
+        <!-- <input type="time" placeholder="Time" name="BGTime" /> -->
+        <input class="data-Num" type="text" placeholder="Blood-Sugar" name="BGSugar" />
         <input  class="submit" type="submit" />
       </form>
     </section>

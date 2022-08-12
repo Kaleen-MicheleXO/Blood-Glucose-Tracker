@@ -10,15 +10,19 @@ Array.from(DeleteText).forEach((e) => {
 
 
 
-window.onload=(BGcheck)=>{
-  const BG = Number(this.parentNode.childNodes[5].innerText);
- //console.log(this.parentNode.childNodes)
-  if (BG<=140){
-    document.querySelector('.fa-thumbs-up').classList.remove('hidden')
-  }else{document.querySelector('.fa-thumbs-up').classList.add('hidden')}
+document.querySelectorAll('.Blood-Sugar-Data').forEach(li => {
+  const BG = Number(li.childNodes[5].innerText);
 
-};
-
+  if (BG<=100 && BG>=70){
+    li.querySelector('.fa-face-smile').classList.remove('hidden')
+  }
+  else if (BG>=101 && BG<=140){
+    li.querySelector('.fa-face-meh').classList.remove('hidden')
+  }
+  else{li.querySelector('.fa-face-frown').classList.remove('hidden')
+}
+  
+});
 
 
 

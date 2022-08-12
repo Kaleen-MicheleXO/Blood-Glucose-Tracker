@@ -2,6 +2,24 @@
   box-sizing: border-box;
   padding: 0%;
   margin: 0%;
+  font-family: 'Figtree', sans-serif;
+  
+}
+body{
+  background-image: url('../Css/Assets/abstract-background-design-emerald-green_53876-43540.webp');
+  
+
+}
+
+.mainS{
+  width:75%;
+  /* border: 1px solid black; */
+  position: relative;
+  left: 10%;
+  background-color: white;
+  margin-bottom: 1%;
+  border:12px solid gray;
+  margin-top: 2%;
 }
 .hidden{
   visibility: hidden;
@@ -13,64 +31,106 @@ h1 {
   color: palegreen;
 }
 div {
+  width:100%;
   display: flex;
   border-bottom: 1px solid black;
 }
-h2 {
-  justify-content: flex-start;
-  align-items: flex-start;
-  align-self: flex-start;
-  justify-self: start;
-  border: 1px, solid black;
+
+.data-Title{
+  display: flex;
+  justify-content: center;
+  font-size: 1.5em;
+  
 }
-.sectD {
-  margin-left: 3%;
-  margin-right: 30%;
+
+.data-Added{
+  display: flex;
+  justify-content: center;
+  margin-top: 1%;
+  
 }
-.secT {
-  margin-right: 25%;
+.data-Num{
+  border: unset;
+  border-radius: 4px;
+  width: 16%;
+  min-height: 23px;
 }
-.sectB {
-  margin-left: 15%;
+.submit{
+  color: white;
+    background-color: gray;
+    border-radius: 4px;
+    width: 9%;
+    min-height: 24px;
+    margin-left: 0.5%;
+}
+.form{
+  display:flex;
+  justify-content: start;
+}
+main{
+   box-shadow: 5px 5px 15px
+
+}
+
+.sectB{
+  margin-left: 12%;
+}
+.sectDE{
+  margin-left: 64%;
 }
 
 li {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  /* justify-content: space-between; */
   align-items: center;
   text-align: left;
-  border-bottom: 1px solid black;
+   border-bottom: 1px solid gray;
   list-style: square;
 }
+
+.fa-face-frown{
+  color:red;
+  position: absolute;
+  left:86%;
+}
+.fa-face-meh{
+  color:orange;
+  position: absolute;
+  left:86%;
+}
+/* .fa-check{
+  color:green;
+} */
 
 span {
   width: 80px;
   margin-top: 1%;
 }
-.Date {
-  margin-left: -11%;
-}
-.Time {
-  margin-left: 13%;
+
+.Date{
+  width:14%;
+  margin-left: 1%;
 }
 
-.Blood-Sugar {
-  /* margin-left: 39%; */
-  width: 2%;
+.Blood-Sugar{
+margin-left: 5%;
 }
-/* .fa-thumbs-up {
-  margin-right: 21%;
-  width: 2%;
+.Blood-Sugarr{
+  Font-family: 'Figtree', sans-serif;
+  font-weight: 500;
 }
-.fa-thumbs-down {
-  margin-left: -22%;
-  margin-right: 5%;
-  width: 2%; */
-/* } */
-section {
-  margin-top: 2%;
+.fa-face-smile{
+  color:green;
+  margin-left: 59%;
 }
+.fa-droplet:before {
+    margin-right: 6%;
+    color:red;
+}
+
+
+
 /* 
 @media screen and (max-width: 580px) {
   h1 {

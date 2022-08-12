@@ -40,7 +40,7 @@ app.post("/addBG", (request, response) => {
   // console.log(request);
   db.collection("Current-BG")
     .insertOne({
-      BGDate: new Date().toString().slice(0,16),
+      BGDate:new Date().toString().slice(0,21),
       BGTime: request.body.BGTime,
       BGSugar: request.body.BGSugar,
       likes: 0,
@@ -60,7 +60,7 @@ app.post("/addBG", (request, response) => {
 app.delete("/deleteBG", (request, response) => {
   console.log(request);
   db.collection("Current-BG")
-    .deleteOne({ BGDate: new Date().toString().slice(0,16)})
+    .deleteOne({ BGDate: new Date().toString().slice(0,21)})
     .then((result) => {
       console.log("Sucessfully deleted one");
       response.json("Song Deleted");
@@ -73,3 +73,4 @@ app.listen(process.env.PORT || PORT, () => {
 });
 
 // BGDate: request.body.BGDate,
+//new Date().toString().slice(0,16),
