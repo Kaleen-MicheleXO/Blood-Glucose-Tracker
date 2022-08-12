@@ -52,9 +52,28 @@ app.post("/addBG", (request, response) => {
     .catch((error) => console.error(error));
     
 });
+// ///Update what is idTask?///
 
+//  app.route("/edit/:id").get((req,res)=>{
+//   const id=req.params.id;
+//   info.find({},(err,) =>{
+//   res.render("edit.ejs",  { info: data, id });
+//   });
+// })
+// .post((req, res) => {
+//   const id = req.params.id;
+//   info.findByIdAndUpdate(
+//     id,
+//     {
+//       BGSugar: request.body.BGSugar,
+//     },
 
-
+//     err => {
+//       if (err) return res.status(500).send(err);
+//       res.redirect("/");
+//   });
+//  })
+// // ///////
 
 //deletes  from db
 app.delete("/deleteBG", (request, response) => {
