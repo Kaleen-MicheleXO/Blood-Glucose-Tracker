@@ -53,14 +53,14 @@ div {
   border: unset;
   border-radius: 4px;
   width: 16%;
-  min-height: 23px;
+  height: 23px;
 }
 .submit{
   color: white;
     background-color: gray;
     border-radius: 4px;
     width: 9%;
-    min-height: 24px;
+    height: 24px;
     margin-left: 0.5%;
 }
 .form{
@@ -131,72 +131,171 @@ margin-left: 5%;
 
 
 
-/* 
+
 @media screen and (max-width: 580px) {
   h1 {
     font-size: 25px;
   }
   .sectB {
-    font-size: 15px;
-    margin-left: 15%;
+  margin-left:17%
   }
-  .sectT {
-    font-size: 15px;
-    margin-right: 11%;
+  .sectDE {
+    margin-left:59% 
   }
-  .sectD {
-    font-size: 15px;
-    margin-right: 19%;
-  } */
-
-  /* .fa-thumbs-up {
-    margin-right: 37%;
+  .sectD,.sectDE,.sectB  {
+    font-size: 7px; 
   }
-  .fa-thumbs-down {
-    margin-left: -34%;
-    margin-right: 20%; */
-/* }
-.Date {
-  margin-left: 11%;
+  .Date{
+    font-size: 6px;
+    width: 75%;
+    margin-left: 1%;
+  
+  }
+.Blood-Sugarr {
+  font-size: 7px;
 }
-.Time {
-  margin-left: 19%;
+.fa-droplet:before {
+  margin-right: 6%;
+  color: red;
+  font-size: 6px;
+}
+.fa-solid, .fas, .fa {
+  font-size: 6px;
+}
+.fa-face-smile {
+  color: green;
+  margin-left: 55%;
+}
+.data-Title {
+  
+  font-size: 0.8em;
+}
+  .submit {
+    width: 10%;
+    height: 13px;
+    font-size: 7px;
+    margin-left: 0.5%;
+  }
+  .data-Num {
+    width: 19%;
+    height: 13px;
+    font-size: 7px;
+}
 }
 
-.Blood-Sugar {
-  margin-left: 31%;
-} */
-/* .fa-thumbs-up {
-    margin-right: 37%;
-  }
-  .fa-thumbs-down {
-    margin-left: -34%;
-    margin-right: 30%; */
-/* } */
-/* } */
-/* @media only screen and (min-width: 680px) and (max-width: 1024px) {
-  .sectA {
-    margin-right: 15%;
-  }
-  .sectS {
-    margin-right: 30%;
-  }
-  /* .Date {
-    margin-left: 2%;
-  }
-  .Time {
-    margin-left: 24%;
-  }
+@media only screen and (min-width: 680px) and (max-width: 1024px) {
+  .sectB {
+    margin-left:11%
+    }
+    .sectDE {
+      margin-left:67% 
+    }
+    .sectD{
+      margin-left: 1%;
+    }
+    .sectD,.sectDE,.sectB  {
+      font-size: 13px; 
+    }
 
-  .Blood-Sugar {
-    margin-left: 32%;
-  } 
-
-  .fa-thumbs-up {
-    margin-right: 31%;
+    .Date{
+      font-size: 9px;
+      width: 29%;
+      margin-left: 1%;
+    
+    }
+    .Blood-Sugarr {
+      font-size: 9px;
+      margin-left: 5%;
+    }
+    .fa-droplet:before {
+      margin-right: 6%;
+      color: red;
+      font-size: 8px;
+    }
+    .fa-solid, .fas, .fa {
+      font-size: 8px;
+    }
+    .fa-face-smile {
+      color: green;
+      margin-left: 67%;
+    }
+    .fa-face-meh,.fa-face-frown {
+      left: 89.5%;
   }
-  .fa-thumbs-down {
-    margin-left: -33%;
-    margin-right: 16%; */
-  /* } */
+  .data-Title {
+    font-size: 1.1em;
+  }
+  .submit {
+    width: 6%;
+    height: 14px;
+    font-size: 6px;
+    margin-left: 0.5%;
+  }
+  .data-Num {
+    width: 13%;
+    height: 14px;
+    font-size: 6px;
+}
+  }
+  @media (min-width:1110px) and  (max-width: 3000px){
+    .sectB {
+      margin-left:10%
+      }
+    .sectDE {
+      margin-left:72% 
+    }
+    .sectD{
+      margin-left: 1%;
+    }
+    .Date{
+      font-size: 14px;
+      width: 24%;
+      margin-left: 1%;
+    }
+    .Blood-Sugarr {
+      font-size: 14px;
+    }
+
+    .sectD,.sectDE,.sectB  {
+      font-size: 19px; 
+    }
+    .Date{
+      font-size: 13px;
+      width: 20%;
+      margin-left: 1%;
+    
+    }
+
+    .fa-droplet:before {
+      margin-right: 6%;
+      color: red;
+      font-size: 13px;
+    }
+    .fa-solid, .fas, .fa {
+      font-size: 13px;
+    }
+    .fa-face-smile {
+      font-size: 13px;
+      color: green;
+      margin-left: 70%;
+    }
+    .fa-face-meh,.fa-face-frown {
+      font-size: 13px;
+      left: 91.5%;
+    }
+      .data-Title {
+        font-size: 1.5em;
+      }
+      .submit {
+        width: 7%;
+        height: 22px;
+        font-size: 11px;
+        margin-left: 0.5%;
+      }
+      .data-Num {
+        width: 16%;
+        height: 21px;
+        font-size: 11px;
+    }
+  }
 
