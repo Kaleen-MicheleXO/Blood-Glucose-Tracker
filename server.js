@@ -4,6 +4,7 @@ const MongoClient = require("mongodb").MongoClient;
 const PORT = 2100;
 require("dotenv").config();
 const cors = require("cors");
+const { ObjectId } = require("mongodb");
 //Database connection
 let db,
   dbConnectionStr = process.env.DB_STRING,
@@ -25,11 +26,12 @@ app.use(express.static("Public")),
   app.use(express.json());
 
 app.get("/", (request, response) => {
-  db.collection("Current-BG")
-    .find()
-    .sort({ likes: -1 })
+  db.collection("BG-Current").find()
+    // .sort({ likes: -1 })
     .toArray()
     .then((data) => {
+      //console.log(data)
+      // idCounter = data.length == 0 ? 0 : data[data.length - 1]._id;
       response.render("index.ejs", { info: data });
     })
     .catch((error) => console.error(error));
@@ -38,12 +40,12 @@ app.get("/", (request, response) => {
 //adds a BG to the site
 app.post("/addBG", (request, response) => {
   // console.log(request);
-  db.collection("Current-BG")
+  db.collection("BG-Current")
     .insertOne({
       BGDate:new Date().toString().slice(0,21),
-      BGTime: request.body.BGTime,
+      // BGTime: request.body.BGTime,
       BGSugar: request.body.BGSugar,
-      likes: 0,
+      // likes: 0,
     })
     .then((result) => {
       console.log("New BG Added");
@@ -52,37 +54,19 @@ app.post("/addBG", (request, response) => {
     .catch((error) => console.error(error));
     
 });
-// ///Update what is idTask?///
 
-//  app.route("/edit/:id").get((req,res)=>{
-//   const id=req.params.id;
-//   info.find({},(err,) =>{
-//   res.render("edit.ejs",  { info: data, id });
-//   });
-// })
-// .post((req, res) => {
-//   const id = req.params.id;
-//   info.findByIdAndUpdate(
-//     id,
-//     {
-//       BGSugar: request.body.BGSugar,
-//     },
-
-//     err => {
-//       if (err) return res.status(500).send(err);
-//       res.redirect("/");
-//   });
-//  })
-// // ///////
 
 //deletes  from db
 app.delete("/deleteBG", (request, response) => {
-  console.log(request);
-  db.collection("Current-BG")
-    .deleteOne({ BGDate: new Date().toString().slice(0,21)})
+  //console.log(id)
+  let id =request.body._id
+  console.log(request.body._id)
+  db.collection("BG-Current")
+    .deleteOne({ "_id": ObjectId(id)})
     .then((result) => {
+      console.log(result);
       console.log("Sucessfully deleted one");
-      response.json("Song Deleted");
+      response.json("BG Deleted");
     })
     .catch((error) => console.error(error));
 });
