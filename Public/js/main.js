@@ -8,24 +8,27 @@ Array.from(DeleteText).forEach((e) => {
   e.addEventListener("click", deleteBG);
 });
 
-// document.querySelectorAll('.Blood-Sugar-Data').forEach(li => {
-//   const BG = Number(li.childNodes[5].innerText);
-//   let span = document.createElement('span')
+document.querySelectorAll('.Blood-Sugar-Data').forEach(li => {
+  const BG = Number(li.childNodes[5].innerText);
+  let span = document.createElement('span')
 
-//   if (BG<=100 && BG>=70){
-//     span.className = 'fa-solid fa-face-smile';
-//     li.appendChild(span)
-    // li.querySelector('.fa-face-smile').classList.remove('hidden')
-//   }
-//   else if (BG>=101 && BG<=140){
+  if (BG<=100 && BG>=70){
+    span.className = 'fa-solid fa-face-smile';
+    li.appendChild(span)
+    li.querySelector('.fa-face-smile').classList.remove('hidden')
+  }
+  else if (BG>=101 && BG<=140){
+    span.className = 'fa-solid fa-face-meh';
+    li.appendChild(span)
+     li.querySelector('.fa-face-meh').classList.remove('hidden')
+  }
+  else{
+    span.className = 'fa-solid fa-face-frown';
+    li.appendChild(span)
+     li.querySelector('.fa-face-frown').classList.remove('hidden')
+}
   
-//     // li.querySelector('.fa-face-meh').classList.remove('hidden')
-//   }
-//   else{
-//     // li.querySelector('.fa-face-frown').classList.remove('hidden')
-// }
-  
-// });
+});
 
 
 
