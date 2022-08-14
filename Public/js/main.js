@@ -50,7 +50,6 @@ async function deleteBG() {
       body: JSON.stringify({
         "_id": id,
         "BGDate": BGD,
-        // "BGTime": BGT,
         "BGSugar": BG 
       }),
     });

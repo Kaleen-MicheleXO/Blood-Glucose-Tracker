@@ -20,6 +20,8 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true }).then(
 
 app.set("view engine", "ejs");
 app.set("port", PORT);
+
+
 //connects to Public folder containing css and js files
 app.use(express.static("Public")),
   app.use(express.urlencoded({ extended: true })),
@@ -27,11 +29,8 @@ app.use(express.static("Public")),
 
 app.get("/", (request, response) => {
   db.collection("BG-Current").find()
-    // .sort({ likes: -1 })
     .toArray()
     .then((data) => {
-      //console.log(data)
-      // idCounter = data.length == 0 ? 0 : data[data.length - 1]._id;
       response.render("index.ejs", { info: data });
     })
     .catch((error) => console.error(error));
@@ -40,12 +39,11 @@ app.get("/", (request, response) => {
 //adds a BG to the site
 app.post("/addBG", (request, response) => {
   // console.log(request);
+  const easternTime = new Date().toLocaleString("en-US", {timeZone: 'America/New_York'})
   db.collection("BG-Current")
     .insertOne({
-      BGDate:new Date().toString().slice(0,21),
-      // BGTime: request.body.BGTime,
+      BGDate: easternTime,
       BGSugar: request.body.BGSugar,
-      // likes: 0,
     })
     .then((result) => {
       console.log("New BG Added");
