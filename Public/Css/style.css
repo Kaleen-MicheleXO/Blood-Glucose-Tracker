@@ -30,6 +30,14 @@ h1 {
   align-self: center;
   color: palegreen;
 }
+.sectD,.sectB,.sectDE{
+  font-size: 23px;
+
+}
+.sectD{
+  margin-left: 1%;
+}
+
 div {
   width:100%;
   display: flex;
@@ -76,7 +84,7 @@ main{
   margin-left: 12%;
 }
 .sectDE{
-  margin-left: 64%;
+  margin-left: 65%;
 }
 
 li {
@@ -92,16 +100,14 @@ li {
 .fa-face-frown{
   color:red;
   position: absolute;
-  left:86%;
+  left:86.3%;
 }
 .fa-face-meh{
   color:orange;
   position: absolute;
-  left:86%;
+  left:86.3%;
 }
-/* .fa-check{
-  color:green;
-} */
+
 
 span {
   width: 80px;
@@ -129,10 +135,13 @@ margin-left: 5%;
     color:red;
 }
 
+span.fa.fa-trash{
+  position: absolute;
+    left: 94%
+}
 
 
-
-@media screen and (max-width: 580px) {
+ @media screen and (max-width: 580px) {
   h1 {
     font-size: 25px;
   }
@@ -147,7 +156,7 @@ margin-left: 5%;
   }
   .Date{
     font-size: 6px;
-    width: 75%;
+    width: 19%;
     margin-left: 1%;
   
   }
@@ -158,13 +167,15 @@ margin-left: 5%;
   margin-right: 6%;
   color: red;
   font-size: 6px;
+  /* width:1% */
 }
 .fa-solid, .fas, .fa {
   font-size: 6px;
+  width:1%
 }
 .fa-face-smile {
   color: green;
-  margin-left: 55%;
+  margin-left: 60.5%;
 }
 .fa-face-meh,.fa-face-frown {
   left: 86.5%;
@@ -185,7 +196,7 @@ margin-left: 5%;
     font-size: 7px;
 }
 }
-
+ 
 @media only screen and (min-width: 600px) and (max-width: 1024px) {
   .sectB {
     margin-left:11%
@@ -202,7 +213,7 @@ margin-left: 5%;
 
     .Date{
       font-size: 9px;
-      width: 29%;
+      width: 13%;
       margin-left: 1%;
     
     }
@@ -217,10 +228,11 @@ margin-left: 5%;
     }
     .fa-solid, .fas, .fa {
       font-size: 8px;
+      width: auto;
     }
     .fa-face-smile {
       color: green;
-      margin-left: 67%;
+      margin-left: 67.7%;
     }
     .fa-face-meh,.fa-face-frown {
       left: 89.5%;
@@ -240,12 +252,13 @@ margin-left: 5%;
     font-size: 6px;
 }
   }
+  
   @media (min-width:1110px) and  (max-width: 3000px){
     .sectB {
-      margin-left:10%
+      margin-left: 20%
       }
     .sectDE {
-      margin-left:69% 
+      margin-left:62% 
     }
     .sectD{
       margin-left: 1%;
@@ -276,16 +289,20 @@ margin-left: 5%;
     }
     .fa-solid, .fas, .fa {
       font-size: 13px;
+      width: auto;
     }
     .fa-face-smile {
       font-size: 13px;
       color: green;
-      margin-left: 70%;
+      margin-left: 63%;
     }
     .fa-face-meh,.fa-face-frown {
       font-size: 13px;
       left: 91.5%;
     }
+    span.fa.fa-trash {
+      left: 96%;
+  }
       .data-Title {
         font-size: 1.5em;
       }
@@ -300,5 +317,5 @@ margin-left: 5%;
         height: 21px;
         font-size: 11px;
     }
-  }
+  } 
 

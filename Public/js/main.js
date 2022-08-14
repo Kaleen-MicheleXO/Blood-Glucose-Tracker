@@ -11,20 +11,23 @@ Array.from(DeleteText).forEach((e) => {
 document.querySelectorAll('.Blood-Sugar-Data').forEach(li => {
   const BG = Number(li.childNodes[5].innerText);
   let span = document.createElement('span')
-
+console.log(li.childNodes)
   if (BG<=100 && BG>=70){
     span.className = 'fa-solid fa-face-smile';
-    li.appendChild(span)
+    li.appendChild(span);
+    //li.insertBefore(span,li.childNodes[7])
     li.querySelector('.fa-face-smile').classList.remove('hidden')
   }
   else if (BG>=101 && BG<=140){
     span.className = 'fa-solid fa-face-meh';
     li.appendChild(span)
+   // li.insertBefore(span,li.childNodes[2])
      li.querySelector('.fa-face-meh').classList.remove('hidden')
   }
   else{
     span.className = 'fa-solid fa-face-frown';
     li.appendChild(span)
+    //li.insertBefore(span,li.childNodes[5])
      li.querySelector('.fa-face-frown').classList.remove('hidden')
 }
   
