@@ -75,5 +75,3 @@ app.listen(process.env.PORT || PORT, () => {
   console.log(`server running on port ${PORT}`);
 });
 
-// BGDate: request.body.BGDate,
-//new Date().toString().slice(0,16),
