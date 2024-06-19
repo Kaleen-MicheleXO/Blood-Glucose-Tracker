@@ -72,13 +72,10 @@
 // app.listen(process.env.PORT || PORT, () => {
 //   console.log(`server running on port ${PORT}`);
 // });
-
 const express = require("express");
 const app = express();
 const MongoClient = require("mongodb").MongoClient;
-const PORT = 2100;
 require("dotenv").config();
-const cors = require("cors");
 const { ObjectId } = require("mongodb");
 
 // Database connection
@@ -94,7 +91,6 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
 
     // Middleware setup
     app.set("view engine", "ejs");
-    app.set("port", PORT);
 
     app.use(express.static("Public"));
     app.use(express.urlencoded({ extended: true }));
@@ -142,7 +138,8 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
     });
 
     // Start the server
-    app.listen(process.env.PORT || PORT, () => {
+    const PORT = process.env.PORT || 2100;
+    app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
     });
   })
