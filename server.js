@@ -8,7 +8,7 @@ const { ObjectId } = require("mongodb");
 //Database connection
 let db,
   dbConnectionStr = process.env.DB_STRING,
-  dbName = "Blood-Suger";
+  dbName = "BloodGlucose1";
 
 //Mongodb connection
 MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true }).then(
@@ -21,14 +21,14 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true }).then(
 app.set("view engine", "ejs");
 app.set("port", PORT);
 
-
 //connects to Public folder containing css and js files
 app.use(express.static("Public")),
   app.use(express.urlencoded({ extended: true })),
   app.use(express.json());
 
 app.get("/", (request, response) => {
-  db.collection("BG-Current").find()
+  db.collection("BG-Current")
+    .find()
     .toArray()
     .then((data) => {
       response.render("index.ejs", { info: data });
@@ -39,7 +39,9 @@ app.get("/", (request, response) => {
 //adds a BG to the site
 app.post("/addBG", (request, response) => {
   // console.log(request);
-  const easternTime = new Date().toLocaleString("en-US", {timeZone: 'America/New_York'})
+  const easternTime = new Date().toLocaleString("en-US", {
+    timeZone: "America/New_York",
+  });
   db.collection("BG-Current")
     .insertOne({
       BGDate: easternTime,
@@ -50,17 +52,15 @@ app.post("/addBG", (request, response) => {
       response.redirect("/");
     })
     .catch((error) => console.error(error));
-    
 });
-
 
 //deletes  from db
 app.delete("/deleteBG", (request, response) => {
   //console.log(id)
-  let id =request.body._id
-  console.log(request.body._id)
+  let id = request.body._id;
+  console.log(request.body._id);
   db.collection("BG-Current")
-    .deleteOne({ "_id": ObjectId(id)})
+    .deleteOne({ _id: ObjectId(id) })
     .then((result) => {
       console.log(result);
       console.log("Sucessfully deleted one");
@@ -72,4 +72,3 @@ app.delete("/deleteBG", (request, response) => {
 app.listen(process.env.PORT || PORT, () => {
   console.log(`server running on port ${PORT}`);
 });
-
